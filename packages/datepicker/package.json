@@ -1,6 +1,6 @@
 {
   "name": "@versatilegurung/vue-nepali-datepicker",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Nepali (Bikram Sambat) date picker component for Vue 3, with zero-dependency BS ⇄ AD conversion.",
   "keywords": [
     "vue",
