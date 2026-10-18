@@ -1,0 +1,26 @@
+name: Calendar data reminder
+
+# The government publishes next year's BS calendar ahead of Baisakh 1 (mid-April).
+# Open an issue every January so BS_MONTH_LENGTHS / BS_LAST_VERIFIED_YEAR get updated.
+on:
+  schedule:
+    - cron: '0 3 15 1 *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  remind:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v8
+        with:
+          script: |
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Verify next BS year calendar data',
+              labels: ['calendar-data'],
+              body: 'Check the officially published calendar for the next BS year and update `packages/datepicker/src/core/calendar-data.ts` (see CONTRIBUTING.md → "Updating calendar data").',
+            })

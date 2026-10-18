@@ -1,0 +1,64 @@
+{
+  "name": "@subashgurung/vue-nepali-datepicker",
+  "version": "0.0.0",
+  "description": "Nepali (Bikram Sambat) date picker component for Vue 3, with zero-dependency BS ⇄ AD conversion.",
+  "keywords": [
+    "vue",
+    "vue3",
+    "datepicker",
+    "nepali",
+    "bikram-sambat",
+    "bs",
+    "calendar"
+  ],
+  "license": "MIT",
+  "author": "Subash Gurung",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subashgurung/nepali-datepicker.git",
+    "directory": "packages/datepicker"
+  },
+  "type": "module",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build && vue-tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json",
+    "check:package": "publint --strict && attw --pack --profile esm-only --exclude-entrypoints style.css --ignore-rules internal-resolution-error",
+    "prepublishOnly": "pnpm build"
+  },
+  "peerDependencies": {
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
+    "@types/node": "^24.13.3",
+    "@vitejs/plugin-vue": "^6.0.10",
+    "@vitest/coverage-v8": "^5.0.5",
+    "@vue/test-utils": "^2.5.1",
+    "@vue/tsconfig": "^0.9.1",
+    "happy-dom": "^21.0.3",
+    "publint": "^0.3.25",
+    "typescript": "~6.0.3",
+    "vite": "^8.3.4",
+    "vitest": "^5.0.5",
+    "vue": "^3.5.44",
+    "vue-tsc": "^3.3.13"
+  }
+}

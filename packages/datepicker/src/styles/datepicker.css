@@ -1,0 +1,237 @@
+/*
+ * Theme: override any --ndp-* variable on `.ndp` (or any ancestor) to re-theme.
+ * Example dark theme:
+ *   .dark .ndp, .dark .ndp-panel { --ndp-bg: #1f2328; --ndp-fg: #e6edf3; --ndp-border: #3d444d; }
+ */
+.ndp,
+.ndp-panel {
+  --ndp-font: inherit;
+  --ndp-font-size: 14px;
+  --ndp-bg: #ffffff;
+  --ndp-fg: #1f2328;
+  --ndp-muted: #8c959f;
+  --ndp-border: #d0d7de;
+  --ndp-hover: #f3f4f6;
+  --ndp-primary: #c8102e;
+  --ndp-primary-fg: #ffffff;
+  --ndp-focus-ring: 0 0 0 2px color-mix(in srgb, var(--ndp-primary) 45%, transparent);
+  --ndp-weekend: #c8102e;
+  --ndp-radius: 8px;
+  --ndp-cell-size: 36px;
+  --ndp-shadow: 0 8px 24px rgb(0 0 0 / 0.12);
+  --ndp-z-index: 1000;
+
+  font-family: var(--ndp-font);
+  font-size: var(--ndp-font-size);
+  color: var(--ndp-fg);
+}
+
+.ndp {
+  position: relative;
+  display: inline-block;
+}
+
+.ndp--inline {
+  display: inline-block;
+}
+
+/* ---- input ---- */
+
+.ndp-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ndp-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 12em;
+  padding: 8px 32px 8px 10px;
+  font: inherit;
+  color: inherit;
+  background: var(--ndp-bg);
+  border: 1px solid var(--ndp-border);
+  border-radius: var(--ndp-radius);
+}
+
+.ndp-input:focus-visible {
+  outline: none;
+  border-color: var(--ndp-primary);
+  box-shadow: var(--ndp-focus-ring);
+}
+
+.ndp-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.ndp-clear {
+  position: absolute;
+  right: 6px;
+  padding: 0 6px;
+  font-size: 18px;
+  line-height: 1;
+  color: var(--ndp-muted);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.ndp-clear:hover {
+  color: var(--ndp-fg);
+}
+
+/* ---- popover ---- */
+
+.ndp-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  z-index: var(--ndp-z-index);
+  background: var(--ndp-bg);
+  border: 1px solid var(--ndp-border);
+  border-radius: var(--ndp-radius);
+  box-shadow: var(--ndp-shadow);
+}
+
+/* ---- calendar ---- */
+
+.ndp-calendar {
+  box-sizing: border-box;
+  width: max-content;
+  padding: 10px;
+  background: var(--ndp-bg);
+  border-radius: var(--ndp-radius);
+}
+
+.ndp--inline.ndp-calendar {
+  border: 1px solid var(--ndp-border);
+}
+
+.ndp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.ndp-selects {
+  display: flex;
+  gap: 4px;
+}
+
+.ndp-select {
+  padding: 4px 6px;
+  font: inherit;
+  font-weight: 600;
+  color: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: calc(var(--ndp-radius) / 2);
+  cursor: pointer;
+}
+
+.ndp-select:hover {
+  background: var(--ndp-hover);
+}
+
+.ndp-nav,
+.ndp-day,
+.ndp-link {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: calc(var(--ndp-radius) / 2);
+  cursor: pointer;
+}
+
+.ndp-nav {
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.ndp-nav:hover:not(:disabled),
+.ndp-day:hover:not([aria-disabled='true']):not(.ndp-day--selected),
+.ndp-link:hover:not(:disabled) {
+  background: var(--ndp-hover);
+}
+
+.ndp-nav:disabled,
+.ndp-link:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.ndp-grid {
+  border-collapse: collapse;
+}
+
+.ndp-grid td {
+  padding: 1px;
+}
+
+.ndp-weekday {
+  width: var(--ndp-cell-size);
+  padding-bottom: 4px;
+  font-size: 0.8em;
+  font-weight: 500;
+  color: var(--ndp-muted);
+}
+
+.ndp-day {
+  width: var(--ndp-cell-size);
+  height: var(--ndp-cell-size);
+  padding: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.ndp-day--saturday {
+  color: var(--ndp-weekend);
+}
+
+.ndp-day--outside {
+  color: var(--ndp-muted);
+}
+
+.ndp-day--today {
+  box-shadow: inset 0 0 0 1px var(--ndp-primary);
+}
+
+.ndp-day--selected {
+  color: var(--ndp-primary-fg);
+  background: var(--ndp-primary);
+}
+
+.ndp-day[aria-disabled='true'] {
+  opacity: 0.35;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.ndp-nav:focus-visible,
+.ndp-select:focus-visible,
+.ndp-day:focus-visible,
+.ndp-link:focus-visible,
+.ndp-clear:focus-visible {
+  outline: none;
+  box-shadow: var(--ndp-focus-ring);
+}
+
+.ndp-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--ndp-border);
+}
+
+.ndp-link {
+  padding: 4px 10px;
+  font-weight: 500;
+  color: var(--ndp-primary);
+}
