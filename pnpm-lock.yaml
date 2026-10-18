@@ -235,7 +235,7 @@ importers:
 
   playground:
     dependencies:
-      '@subashgurung/vue-nepali-datepicker':
+      '@versatilegurung/vue-nepali-datepicker':
         specifier: workspace:*
         version: link:../packages/datepicker
       vue:

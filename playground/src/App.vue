@@ -5,7 +5,7 @@ import {
   getBsWeekday,
   type BsDate,
   type NepaliDateValue,
-} from '@subashgurung/vue-nepali-datepicker'
+} from '@versatilegurung/vue-nepali-datepicker'
 
 const bs = ref<string | null>('2081-01-01')
 const ad = ref<string | null>(null)

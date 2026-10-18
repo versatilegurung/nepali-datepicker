@@ -1,4 +1,4 @@
-# @subashgurung/vue-nepali-datepicker
+# @versatilegurung/vue-nepali-datepicker
 
 Nepali (Bikram Sambat) date picker for **Vue 3**. Accessible, themeable with CSS variables,
 SSR-safe, and with zero-dependency BS ⇄ AD conversion (1970–2090 BS).
@@ -6,12 +6,12 @@ SSR-safe, and with zero-dependency BS ⇄ AD conversion (1970–2090 BS).
 ## Install
 
 ```sh
-pnpm add @subashgurung/vue-nepali-datepicker
+pnpm add @versatilegurung/vue-nepali-datepicker
 ```
 
 ```ts
 // main.ts
-import '@subashgurung/vue-nepali-datepicker/style.css'
+import '@versatilegurung/vue-nepali-datepicker/style.css'
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ import '@subashgurung/vue-nepali-datepicker/style.css'
 ```vue
 <script setup lang="ts">
 import { ref } from 'vue'
-import { NepaliDatePicker } from '@subashgurung/vue-nepali-datepicker'
+import { NepaliDatePicker } from '@versatilegurung/vue-nepali-datepicker'
 
 const date = ref<string | null>(null) // '2081-01-15' (BS)
 </script>
@@ -81,7 +81,7 @@ See `src/styles/datepicker.css` for the full list.
 ## Utilities
 
 ```ts
-import { adToBs, bsToAd, formatBs, parseBs, todayBs } from '@subashgurung/vue-nepali-datepicker'
+import { adToBs, bsToAd, formatBs, parseBs, todayBs } from '@versatilegurung/vue-nepali-datepicker'
 
 adToBs(new Date(2024, 3, 13)) // { year: 2081, month: 1, day: 1 }
 bsToAd({ year: 2081, month: 1, day: 1 }) // Date 2024-04-13 (local midnight)

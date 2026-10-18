@@ -3,7 +3,7 @@
   "compilerOptions": {
     "types": ["vite/client"],
     "paths": {
-      "@subashgurung/vue-nepali-datepicker": ["../packages/datepicker/src/index.ts"]
+      "@versatilegurung/vue-nepali-datepicker": ["../packages/datepicker/src/index.ts"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.vue"]

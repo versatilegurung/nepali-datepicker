@@ -1,5 +1,5 @@
 {
-  "name": "@subashgurung/vue-nepali-datepicker",
+  "name": "@versatilegurung/vue-nepali-datepicker",
   "version": "0.0.0",
   "description": "Nepali (Bikram Sambat) date picker component for Vue 3, with zero-dependency BS ⇄ AD conversion.",
   "keywords": [
@@ -15,7 +15,7 @@
   "author": "Subash Gurung",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/subashgurung/nepali-datepicker.git",
+    "url": "git+https://github.com/versatilegurung/nepali-datepicker.git",
     "directory": "packages/datepicker"
   },
   "type": "module",

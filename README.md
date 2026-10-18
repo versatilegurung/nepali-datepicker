@@ -1,6 +1,6 @@
 # Nepali Date Picker (Vue 3)
 
-Monorepo for [`@subashgurung/vue-nepali-datepicker`](packages/datepicker), a Bikram Sambat date picker for Vue 3.
+Monorepo for [`@versatilegurung/vue-nepali-datepicker`](packages/datepicker), a Bikram Sambat date picker for Vue 3.
 
 | Path                  | What                                                            |
 | --------------------- | --------------------------------------------------------------- |

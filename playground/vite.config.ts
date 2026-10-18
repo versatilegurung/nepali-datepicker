@@ -7,10 +7,10 @@ export default defineConfig({
   plugins: [vue()],
   resolve: {
     alias: {
-      '@subashgurung/vue-nepali-datepicker/style.css': fileURLToPath(
+      '@versatilegurung/vue-nepali-datepicker/style.css': fileURLToPath(
         new URL('../packages/datepicker/src/styles/datepicker.css', import.meta.url),
       ),
-      '@subashgurung/vue-nepali-datepicker': fileURLToPath(
+      '@versatilegurung/vue-nepali-datepicker': fileURLToPath(
         new URL('../packages/datepicker/src/index.ts', import.meta.url),
       ),
     },

@@ -8,7 +8,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@subashgurung/vue-nepali-datepicker": "workspace:*",
+    "@versatilegurung/vue-nepali-datepicker": "workspace:*",
     "vue": "^3.5.44"
   },
   "devDependencies": {
